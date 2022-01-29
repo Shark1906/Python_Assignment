@@ -10,11 +10,12 @@ class Coupon_Number:
     def generate_coupons(self, N):
         self.N = N
         coupons = []
-        for i in range(0, N):
-            coupons.append(Coupon_Number.get_random())
-            for j in range(N, -1):
-                if coupons[i] == coupons[j]:
-                    coupons[i] = Coupon_Number.get_random()
+        count = 0
+        while count != N:
+            coupon = Coupon_Number.get_random()
+            if not coupons.__contains__(coupon):
+                coupons.append(coupon)
+                count+=1
         print(coupons)
 
 N = input('Enter the number of coupons you want : ')
