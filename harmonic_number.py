@@ -1,4 +1,4 @@
-print('Enter the number of flipcoin')
+print('Enter the nth term')
 n = input()
 harmonic_num = 0
 
